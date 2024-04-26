@@ -46,16 +46,11 @@ function launchab() {
 }
 
 function launchPopup() {
-  const win = window.open('about:blank', '_blank')
+  const win = window.open('about:blank', '_blank',"width=960,height=540")
   const iframe = window.document.createElement('iframe')
   const stl = iframe.style
-  stl.border = stl.outline = 'none'
-  stl.width = '100vw'
-  stl.height = '100vh'
-  stl.position = 'fixed'
-  stl.left = stl.right = stl.top = stl.bottom = '0'
   iframe.src = self.location
-  window.document.body.appendChild(iframe)
+  win.document.write(iframeCode)
   window.parent.window.location.replace(localStorage.getItem('panicurl') || 'https://classroom.google.com/h')
   window.open("", "_top").close()
 }
