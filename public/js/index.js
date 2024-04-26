@@ -46,12 +46,8 @@ function launchab() {
 }
 
 function launchPopup() {
-  const win = window.open('about:blank', '_blank',"width=960,height=540")
-  const iframe = window.document.createElement('iframe')
-  const stl = iframe.style
-  iframe.src = self.location
+  const win = window.open("about:blank", "", "width=960,height=540")
   win.document.write(iframeCode)
-  window.parent.window.location.replace(localStorage.getItem('panicurl') || 'https://classroom.google.com/h')
   window.open("", "_top").close()
 }
 function launchPopup2() {
