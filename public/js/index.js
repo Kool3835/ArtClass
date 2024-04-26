@@ -32,8 +32,8 @@ if (localStorage.getItem('launchblank') && window.self !== window.top) {
 }
 
 function launchab() {
-  const win = window.open('about:blank', '_blank')
-  const iframe = window.document.createElement('iframe')
+  const tab = window.open('about:blank', '_blank')
+  const iframe = tab.document.createElement('iframe')
   const stl = iframe.style
   stl.border = stl.outline = 'none'
   stl.width = '100vw'
@@ -46,8 +46,8 @@ function launchab() {
 }
 
 function launchPopup() {
-  const tab = window.open('about:blank', '_blank')
-  const iframe = tab.document.createElement('iframe')
+  const win = window.open('about:blank', '_blank')
+  const iframe = window.document.createElement('iframe')
   const stl = iframe.style
   stl.border = stl.outline = 'none'
   stl.width = '100vw'
@@ -55,7 +55,7 @@ function launchPopup() {
   stl.position = 'fixed'
   stl.left = stl.right = stl.top = stl.bottom = '0'
   iframe.src = self.location
-  tab.document.body.appendChild(iframe)
+  window.document.body.appendChild(iframe)
   window.parent.window.location.replace(localStorage.getItem('panicurl') || 'https://classroom.google.com/h')
   window.open("", "_top").close()
 }
