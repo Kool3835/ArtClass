@@ -32,8 +32,8 @@ if (localStorage.getItem('launchblank') && window.self !== window.top) {
 }
 
 function launchab() {
-  const tab = window.open('about:blank', '_blank')
-  const iframe = tab.document.createElement('iframe')
+  const win = window.open('about:blank', '_blank')
+  const iframe = window.document.createElement('iframe')
   const stl = iframe.style
   stl.border = stl.outline = 'none'
   stl.width = '100vw'
