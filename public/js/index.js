@@ -47,7 +47,7 @@ function launchab() {
 
 function launchPopup() {
   const win = window.open("about:blank", "", "width=960,height=540")
-  win.document.write(iframeCode)
+  win.document.write(iframe)
   window.open("", "_top").close()
 }
 function launchPopup2() {
